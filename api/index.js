@@ -28,8 +28,12 @@ app.use((requisicao, resposta, proximo) => {
   proximo();
 });
 
+const roteadorv2 = require("./rotas/fornecedores/rotas.v2");
+app.use("/api/v2/fornecedores", roteadorv2);
+
 const roteador = require("./rotas/fornecedores");
 app.use("/api/fornecedores", roteador);
+
 const roteadorEmpresa = require("./rotas/empresas");
 app.use("/api/empresas", roteadorEmpresa);
 
